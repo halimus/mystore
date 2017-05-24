@@ -1,5 +1,5 @@
 # mystore 1.0
-PHP MVC Basic admin for an Ecommerce
+PHP MVC Basic admin for an Ecommerce with Bootstrap & jQuery
 
 ###Step 1 : The Datbase
 
