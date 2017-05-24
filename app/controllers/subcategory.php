@@ -27,7 +27,7 @@ class Subcategory extends Controller {
     }
     
     /*
-     * 
+     * Create SubCategory
      */
     public function create() {
         $notif = array();
@@ -67,7 +67,7 @@ class Subcategory extends Controller {
     
     
     /*
-     * 
+     * Edit SubCategory
      */
     public function edit($id='') {
         $notif = array();
@@ -114,7 +114,7 @@ class Subcategory extends Controller {
     }
     
     /*
-     * 
+     * Delete SubCategory
      */
     public function delete() {
         $notif = array();
@@ -136,7 +136,7 @@ class Subcategory extends Controller {
     }
     
     /*
-     * 
+     * validation Rules for SubCategory
      */
     private function validate_condition(){
         $data_condition = array();
