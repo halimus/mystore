@@ -72,8 +72,38 @@ class Subcategory extends Controller {
     public function edit($id='') {
         $notif = array();
         $this->view->title = 'MyStore | SubCategory';
+        $this->view->category = $this->model->get_all_category();
         
-     
+        if(count($_POST)){
+            $form = new Form();
+            $data_condition = $this->validate_condition(); 
+            $errors = $form->validate($data_condition);
+            if (!empty($errors)) {
+                $this->view->notif = $errors;
+            }
+            else{
+                $result = $this->model->update_subcategory($id);
+                if($result){
+                    $notif['msg'] = 'SubCategory successfully updated';
+                    $notif['type'] = 'success';
+                }
+                else{
+                    $notif['msg']  = 'Error during UPDATE';
+                    $notif['type'] = 'danger';
+                }
+                $this->view->notif = $notif;
+            }
+        }
+        
+        /*
+         * Get the Data
+         */
+        $subcategory = $this->model->get_single_subcategory($id);
+        if(empty($subcategory)){
+            header("location: " . APP_URL . "errors");
+        }
+        $this->view->subcategory = $subcategory;
+        
         /*
          * Load view
          */
@@ -81,6 +111,28 @@ class Subcategory extends Controller {
         $this->view->render('includes/sidebar');
         $this->view->render('subcategory/edit');
         $this->view->render('includes/footer');
+    }
+    
+    /*
+     * 
+     */
+    public function delete() {
+        $notif = array();
+        $reponse['notif'] = ''; 
+        
+        $id = $_POST['id'];
+        if(!empty($id)){
+            $result = $this->model->delete_subcategory($id);
+            if($result){
+                $reponse['notif']['msg'] = 'Successfully deleted';
+                $reponse['notif']['type'] = 'success';
+            }
+            else{
+                $reponse['notif']['msg'] = "You can't delete this Category";
+                $reponse['notif']['type'] = 'danger';
+            }
+        }
+        echo json_encode($reponse);
     }
     
     /*

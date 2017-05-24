@@ -49,6 +49,34 @@ $(function () {
     });
     
     /*
+     * Delete sub_category
+     */
+    $(document).on('click', '.delete_subcategory', function () {
+        var id = $(this).attr('rel');
+        msgConfirm = 'Do you really want to delete this subcategory?';
+        if (confirm(msgConfirm)) {
+            $.ajax({
+                type: "POST",
+                url: application_url + "subcategory/delete",
+                data: {'id': id},
+                dataType: 'JSON',
+                success: function (response) {
+                    if (response.notif['type'] == 'success') {
+                        $('#tr_'+id).remove();
+                    }
+                    else{
+                        alert(response.notif['msg']);
+                    }
+                },
+                error: function () {
+                    alert('Failed request to delete');
+                }
+            });
+        }
+        return false;
+    });
+    
+    /*
      * 
      */
     var file_num=0;
