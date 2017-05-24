@@ -52,11 +52,6 @@ Password: 1234
 ![alt tag](https://github.com/halimus/mystore/blob/master/public/images/demo3.jpg)
 
 
-Contact me at:
-
-halim.webdev@gmail.co, for more Info  
-
-Thanks
 
 
 
