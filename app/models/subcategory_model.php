@@ -2,15 +2,19 @@
 
 class Subcategory_model extends Model {
 
+    private $table;
+    
     function __construct() {
         parent::__construct();
+        $this->table = 'sub_category';
+        
     }
     
     /*
      * 
      */
     public function get_all_subcategory() {
-        $sql = "SELECT * FROM sub_category";
+        $sql = "SELECT * FROM ".$this->table;
         return $this->db->select($sql);
     }
     
@@ -18,7 +22,7 @@ class Subcategory_model extends Model {
      * 
      */
     public function get_single_subcategory($id) {
-        return $this->db->selectSingle('SELECT * FROM sub_category WHERE sub_category_id = :sub_category_id', array(':sub_category_id' => $id));
+        return $this->db->selectSingle('SELECT * FROM '.$this->table.' WHERE sub_category_id = :sub_category_id', array(':sub_category_id' => $id));
     }
     
     /*
@@ -33,39 +37,35 @@ class Subcategory_model extends Model {
      * 
      */
     public function create_subcategory() { 
-        $notif = array();
-        
-        $sql = "INSERT INTO sub_category (sub_category_id, sub_category_name, category_id) VALUES (NULL, :sub_category_name, :category_id)";
-        $stmt = $this->db->prepare($sql);
-        try {
-            $stmt->bindValue(':sub_category_name', $_POST['sub_category_name']);
-            $stmt->bindValue(':category_id', $_POST['category_id']);
-            $stmt->execute();
-            
-            $notif['msg'] = 'SubCategory successfully created';
-            $notif['type'] = 'success';
-        } 
-        catch (Exception $ex) {
-            $notif['msg']  = $ex->getMessage();
-            $notif['type'] = 'danger';
-        }
-        return $notif;
+        $data = array(
+            'sub_category_name' => $_POST['sub_category_name'],
+            'category_id' => $_POST['category_id']
+        );
+        $result = $this->db->insert($this->table, $data);
+        return $result;
     }
-    
+ 
     /*
      * 
      */
-    public function update_subcategory($id) { 
+    public function update_subcategory($id) {  
+        $data = array(
+            'sub_category_name' => $_POST['sub_category_name'],
+            'category_id' => $_POST['category_id']
+        );
+        $where = 'sub_category_id = '.$this->db->quote($id) ;
         
-        
+        $result = $this->db->update($this->table, $data, $where);
+        return $result; 
     }
     
     /*
      * 
      */
     public function delete_subcategory($id) { 
-        
-        
+        $where = 'sub_category_id = '.$this->db->quote($id) ;
+        $result = $this->db->delete($this->table, $where);  
+        return $result;   
     } 
     
 }

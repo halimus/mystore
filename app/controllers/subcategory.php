@@ -30,6 +30,7 @@ class Subcategory extends Controller {
      * 
      */
     public function create() {
+        $notif = array();
         $this->view->title = 'MyStore | SubCategory';
         $this->view->category = $this->model->get_all_category();
 
@@ -42,10 +43,16 @@ class Subcategory extends Controller {
             }
             else{
                 $result = $this->model->create_subcategory();
-                $this->view->notif = $result;
-                if($result['type']=='success'){
+                if($result){
+                    $notif['msg'] = 'SubCategory successfully created';
+                    $notif['type'] = 'success';
                     unset($_POST);
                 }
+                else{
+                    $notif['msg']  = 'Error during INSERT';
+                    $notif['type'] = 'danger';
+                }
+                $this->view->notif = $notif;
             }
         }
         
@@ -63,6 +70,7 @@ class Subcategory extends Controller {
      * 
      */
     public function edit($id='') {
+        $notif = array();
         $this->view->title = 'MyStore | SubCategory';
         
      
