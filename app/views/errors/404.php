@@ -2,6 +2,7 @@
     <head>
         <meta charset="utf-8">
         <title>404 Page Not Found</title>
+        <link rel="icon" type="image/png" href="<?php echo APP_URL;?>public/images/logo24.png">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <style>
             .center {text-align: center; margin-left: auto; margin-right: auto; margin-bottom: auto; margin-top: auto;}

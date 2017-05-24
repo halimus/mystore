@@ -6,7 +6,7 @@ class bootstrap {
     private $_controller     = null;
     private $_controllerPath = "app/controllers/"; /* Always include trailing slash */
     private $_modelPath      = 'app/models/'; /* Always include trailing slash */
-    private $_errorFile      = 'error.php';
+    private $_errorFile      = 'errors.php';
     private $_defaultFile    = 'index.php'; // default controller
   
     //private $_adminFolder = 'admin';   
@@ -161,7 +161,7 @@ class bootstrap {
      */
     private function _error() {
         require $this->_controllerPath . $this->_errorFile;
-        $this->_controller = new Error();
+        $this->_controller = new Errors();
         $this->_controller->index();
         exit;
     }
