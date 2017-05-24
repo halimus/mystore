@@ -8,9 +8,6 @@ class bootstrap {
     private $_modelPath      = 'app/models/'; /* Always include trailing slash */
     private $_errorFile      = 'errors.php';
     private $_defaultFile    = 'index.php'; // default controller
-  
-    //private $_adminFolder = 'admin';   
-   // private $_modelPathAdmin = 'app/models/admin/'; /* $_modelPath2 for administration */
 
     /**
      * Starts the Bootstrap
