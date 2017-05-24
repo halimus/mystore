@@ -1,6 +1,14 @@
 # mystore 1.0
 PHP MVC Basic admin for an Ecommerce with Bootstrap & jQuery
 
+###Demo : 
+https://demo.halimlardjane.com/mystore
+
+The email: admin@mystore.com
+Password: 1234
+
+##Install:
+
 ###Step 1 : The Datbase
 
 Go to the _script forlder and execute the 2 scripts on MySQL:
