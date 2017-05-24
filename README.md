@@ -29,7 +29,7 @@ You will find the MPD as well in this folder.
 
 go to the forlder: app/config/database.php 
 
-###Step 3 : probably you need to change the APP_URL
+### Step 3 : probably you need to change the APP_URL
 
 If, yesGo go : app/config/config.php
 
