@@ -1,7 +1,7 @@
 # mystore 1.0
 PHP MVC Basic admin for an Ecommerce with Bootstrap & jQuery
 
-###Demo : 
+### Demo : 
 https://demo.halimlardjane.com/mystore
 
 The email: admin@mystore.com
