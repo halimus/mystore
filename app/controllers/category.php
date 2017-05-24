@@ -65,6 +65,7 @@ class Category extends Controller {
      * 
      */
     public function edit($id='') {
+        $notif = array();
         $this->view->title = 'MyStore | Category';
         
         if(count($_POST)){
@@ -75,7 +76,15 @@ class Category extends Controller {
             }
             else{
                 $result = $this->model->update_category($id);
-                $this->view->notif = $result;
+                if($result){
+                    $notif['msg'] = 'Category successfully updated';
+                    $notif['type'] = 'success';
+                }
+                else{
+                    $notif['msg']  = 'Error during UPDATE';
+                    $notif['type'] = 'danger';
+                }
+                $this->view->notif = $notif;
             }
         }
         

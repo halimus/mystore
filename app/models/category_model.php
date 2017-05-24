@@ -41,41 +41,27 @@ class Category_model extends Model {
      * 
      */
     public function update_category($id) { 
-        $notif = array();
+        $data = array(
+            'category_name' => $_POST['category_name'],
+            'slug' => $this->create_slug($_POST['category_name'], $id),
+            'category_id' => $id
+        );
+        $where = 'category_id = '.$this->db->quote($id) ;
         
-        $sql = "UPDATE `category` SET `category_name` = :category_name, `slug` = :slug WHERE `category_id` = :category_id";
-        $stmt = $this->db->prepare($sql);
-        
-        try {
-            $slug = $this->create_slug($_POST['category_name'], $id);
-            
-            $stmt->bindValue(':category_name', $_POST['category_name']);
-            $stmt->bindValue(':slug', $slug);
-            $stmt->bindValue(':category_id', $id);
-            $stmt->execute();
-
-            $notif['msg'] = 'Category successfully updated';
-            $notif['type'] = 'success';
-        } 
-        catch (Exception $ex) {
-            $notif['msg']  = $ex->getMessage();
-            $notif['type'] = 'danger';
-        }
-        return $notif;
+        $result = $this->db->update($this->table, $data, $where);
+        return $result;
     }
+    
     
     /*
      * 
      */
     public function delete_category($id) { 
-        $sql = "DELETE FROM category WHERE category_id = :category_id";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(':category_id', $id, PDO::PARAM_INT);   
-        $query = $stmt->execute();
-        
-        if($query) return true;
-        else return false;
+      $where = 'category_id = '.$this->db->quote($id) ;
+      $result = $this->db->delete($this->table, $where);  
+      return $result;  
     }
+    
     
     /*
      * Create Slug
@@ -105,7 +91,6 @@ class Category_model extends Model {
             $slug = $slug."-".$new_number;
         }
         return $slug;
-        
     }
     
     

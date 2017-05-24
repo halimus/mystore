@@ -107,14 +107,17 @@ class Database extends PDO {
 
         try {
             $stmt->execute();
-        } catch (Exception $ex) {
-            echo '<hr/>';
-            echo 'Code=' . $ex->getCode() . '<br/>';
-            echo 'File=' . $ex->getFile() . '<br/>';
-            echo 'Line=' . $ex->getLine() . '<br/>';
-            echo 'Message=' . $ex->getMessage() . '<br/>';
-            echo '<hr/>';
-            die();
+            return true;
+        } 
+        catch (Exception $ex) {
+//            echo '<hr/>';
+//            echo 'Code=' . $ex->getCode() . '<br/>';
+//            echo 'File=' . $ex->getFile() . '<br/>';
+//            echo 'Line=' . $ex->getLine() . '<br/>';
+//            echo 'Message=' . $ex->getMessage() . '<br/>';
+//            echo '<hr/>';
+//            die();
+            return false;
         }
     }
 
