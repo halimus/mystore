@@ -12,7 +12,9 @@ function __autoload($class) {
     
 }
 
-//require 'app/models/util_model.php';
+/*
+* 
+*/
 Session::init();
 
 /*
