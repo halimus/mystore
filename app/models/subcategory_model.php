@@ -6,8 +6,7 @@ class Subcategory_model extends Model {
     
     function __construct() {
         parent::__construct();
-        $this->table = 'sub_category';
-        
+        $this->table = 'sub_category'; 
     }
     
     /*

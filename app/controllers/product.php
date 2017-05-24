@@ -32,6 +32,7 @@ class Product extends Controller {
      * 
      */
     public function create() {
+        $notif = array();
         $this->view->title = 'MyStore | Product';
         
         $this->view->category = $this->model->get_all_category();
@@ -44,10 +45,21 @@ class Product extends Controller {
             }
             else{
                 $result = $this->model->create_product();
-                $this->view->notif = $result;
+                
+                /*$this->view->notif = $result;
                 if($result['type']=='success'){
                     unset($_POST);
+                }*/
+                if($result){
+                    $notif['msg'] = 'Product successfully created';
+                    $notif['type'] = 'success';
+                    unset($_POST);
                 }
+                else{
+                    $notif['msg']  = 'Error during INSERT';
+                    $notif['type'] = 'danger';
+                }
+                $this->view->notif = $notif;
             }
         }
         
@@ -76,7 +88,16 @@ class Product extends Controller {
             }
             else{
                 $result = $this->model->update_product($id);
-                $this->view->notif = $result;
+                //$this->view->notif = $result;
+                if($result){
+                    $notif['msg'] = 'SubCategory successfully updated';
+                    $notif['type'] = 'success';
+                }
+                else{
+                    $notif['msg']  = 'Error during UPDATE';
+                    $notif['type'] = 'danger';
+                }
+                $this->view->notif = $notif;
             }
         }
         
@@ -86,7 +107,7 @@ class Product extends Controller {
         $product = $this->model->get_single_product($id);
         //Utils::print_r($product); exit;
         if(empty($product)){
-            header("location: " . APP_URL . "error");
+            header("location: " . APP_URL . "errors");
         }
         $this->view->product = $product;
         $this->view->images_product = $this->model->get_images_product($id);
