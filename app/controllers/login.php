@@ -11,7 +11,7 @@ class Login extends Controller {
     }
 
     /*
-     * 
+     * Login controller
      */
     public function index() {
         $this->view->title = 'MyStore | Login';
