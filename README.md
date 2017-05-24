@@ -13,7 +13,9 @@ Password: 1234
 ### Step 1 : The Datbase
 
 Go to the _script forlder and execute the 2 scripts on MySQL:
+
 1- 01-script-structure.sql
+
 2- 02-script-data. (populated data for test)
 
 
@@ -27,8 +29,8 @@ You will find the MPD as well in this folder.
 go to the forlder: app/config/database.php 
 
 ###Step 3 : probably you need to change the APP_URL
-if, yes
-Go go : app/config/config.php
+
+If, yesGo go : app/config/config.php
 
 
 ### Step 4 : Start your app on your browser
@@ -36,6 +38,7 @@ Go go : app/config/config.php
 http://localhost/mystore/
 
 The email: admin@mystore.com
+
 Password: 1234
 
 
@@ -49,6 +52,7 @@ Password: 1234
 
 
 Contact me at:
+
 halim.webdev@gmail.co, for more Info  
 
 Thanks
