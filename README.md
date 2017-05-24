@@ -4,7 +4,7 @@ PHP MVC Basic admin for an Ecommerce with Bootstrap & jQuery
 ## Demo : 
 https://demo.halimlardjane.com/mystore
 
-- ![#f03c15]cccccccccccccccccccc
+RED APPLE (&#x1F34E;):
 
 Email address: admin@mystore.com
 
