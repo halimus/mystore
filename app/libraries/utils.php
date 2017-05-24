@@ -3,7 +3,7 @@
 class Utils {
     
     /*
-     * 
+     * for displaying array data
      */
     public static function print_r($array) {
         echo '<pre>';
