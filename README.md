@@ -13,7 +13,7 @@ Password: 1234
 
 ## Installation:
 
-### Step 1 : The Datbase
+### Step 1 : The Database
 
 Go to the _script forlder and execute the 2 scripts on MySQL:
 
