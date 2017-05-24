@@ -1,4 +1,4 @@
-# mystore
+# mystore 1.0
 PHP MVC Basic admin for an Ecommerce
 
 ###Step 1 : The Datbase
@@ -39,8 +39,7 @@ Password: 1234
 ![alt tag](https://github.com/halimus/mystore/blob/master/public/images/demo3.jpg)
 
 
-
-contact me at:
+Contact me at:
 halim.webdev@gmail.co, for more Info  
 
 Thanks
