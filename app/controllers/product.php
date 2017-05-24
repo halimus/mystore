@@ -29,7 +29,7 @@ class Product extends Controller {
     }
     
     /*
-     * 
+     * Create Product
      */
     public function create() {
         $notif = array();
@@ -45,11 +45,6 @@ class Product extends Controller {
             }
             else{
                 $result = $this->model->create_product();
-                
-                /*$this->view->notif = $result;
-                if($result['type']=='success'){
-                    unset($_POST);
-                }*/
                 if($result){
                     $notif['msg'] = 'Product successfully created';
                     $notif['type'] = 'success';
@@ -74,7 +69,7 @@ class Product extends Controller {
     
     
     /*
-     * 
+     * Edit Product
      */
     public function edit($id='') {
         $this->view->title = 'MyStore | Product';
@@ -122,7 +117,7 @@ class Product extends Controller {
     }
     
     /*
-     * 
+     * Delete Product via Ajax
      */
     public function delete() {
         $notif = array();
@@ -145,7 +140,7 @@ class Product extends Controller {
     
     
     /*
-     * 
+     * Selete Image for Product
      */
     public function delete_file($image_id, $product_id) {
         if(empty($image_id) or empty($product_id)){
@@ -156,7 +151,7 @@ class Product extends Controller {
     }
     
     /*
-     * 
+     * Validation Rules for Product
      */
     private function validate_condition(){
         $data_condition = array();
@@ -166,7 +161,8 @@ class Product extends Controller {
     }
     
     /*
-     * 
+     * Validation Rules for Files (Images)
+     * Need to be Customize...
      */
     private function file_condition(){
         
