@@ -30,11 +30,11 @@ You will find the MPD as well in this folder.
 
 ### Step 2 : If you need to change the database credentials for the app:
 
-Go to the file: app/config/database.php 
+Go to the file: *app/config/database.php* 
 
 ### Step 3 : Probably you need to change the APP_URL
 
-If, yes go to the file: app/config/config.php
+If, yes go to the file: *app/config/config.php*
 
 
 ### Step 4 : Start your app on your browser
