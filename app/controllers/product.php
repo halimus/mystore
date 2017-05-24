@@ -13,7 +13,7 @@ class Product extends Controller {
         $this->view->title = 'MyStore | Product';
         
         /*
-         * 
+         * Get all products to display List
          */
         $result = $this->model->get_all_product();
         $this->view->product = $result;
