@@ -24,7 +24,7 @@ class Category extends Controller {
     }
     
     /*
-     * 
+     * Create Category
      */
     public function create() {
         $notif = array();
@@ -62,7 +62,7 @@ class Category extends Controller {
     
     
     /*
-     * 
+     * Update Category
      */
     public function edit($id='') {
         $notif = array();
@@ -107,7 +107,7 @@ class Category extends Controller {
     }
     
     /*
-     * 
+     * Delete Category
      */
     public function delete() {
         $notif = array();
