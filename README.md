@@ -17,9 +17,9 @@ Password: 1234
 
 Go to the _script forlder and execute the 2 scripts on MySQL:
 
-1- 01-script-structure.sql
+1- *01-script-structure.sql*
 
-2- 02-script-data. (populated data for test)
+2- *02-script-data.sql* (populated data for test)
 
 
 You will find the MPD as well in this folder.
