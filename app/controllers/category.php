@@ -27,6 +27,7 @@ class Category extends Controller {
      * 
      */
     public function create() {
+        $notif = array();
         $this->view->title = 'MyStore | Category';
         
         if(count($_POST)){
@@ -37,10 +38,16 @@ class Category extends Controller {
             }
             else{
                 $result = $this->model->create_category();
-                $this->view->notif = $result;
-                if($result['type']=='success'){
+                if($result){
+                    $notif['msg'] = 'Category successfully created';
+                    $notif['type'] = 'success';
                     unset($_POST);
                 }
+                else{
+                    $notif['msg']  = 'Error during INSERT';
+                    $notif['type'] = 'danger';
+                }
+                $this->view->notif = $notif;
             }
         }
         

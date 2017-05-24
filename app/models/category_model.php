@@ -2,8 +2,11 @@
 
 class Category_model extends Model {
 
+    private $table;
+    
     function __construct() {
         parent::__construct();
+        $this->table = 'category';
     }
     
     /*
@@ -24,27 +27,14 @@ class Category_model extends Model {
     /*
      * 
      */
-    public function create_category() { 
-        $notif = array();
+    public function create_category() {
+        $data = array(
+            'category_name' => $_POST['category_name'],
+            'slug' => $this->create_slug($_POST['category_name'])
+        );
         
-        $sql = "INSERT INTO `category` (`category_id`, `category_name`, `slug`) VALUES (NULL, :category_name, :slug)";
-        $stmt = $this->db->prepare($sql);
-        try {
-            
-            $slug = $this->create_slug($_POST['category_name']);
-            
-            $stmt->bindValue(':category_name', $_POST['category_name']);
-            $stmt->bindValue(':slug', $slug);
-            $stmt->execute();
-            
-            $notif['msg'] = 'Category successfully created';
-            $notif['type'] = 'success';
-        } 
-        catch (Exception $ex) {
-            $notif['msg']  = $ex->getMessage();
-            $notif['type'] = 'danger';
-        }
-        return $notif;
+        $result = $this->db->insert($this->table, $data);
+        return $result;
     }
     
     /*

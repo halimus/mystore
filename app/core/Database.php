@@ -28,7 +28,6 @@ class Database extends PDO {
         foreach ($array as $key => $value) {
             $stmt->bindValue("$key", $value);
         }
-
         $stmt->execute();
         return $stmt->fetchAll($fetchMode);
     }
@@ -53,19 +52,33 @@ class Database extends PDO {
     public function insert($table, $data) {
         ksort($data);
         //print_r($data);
+        
+        try{
+            $fieldNames = implode(', ', array_keys($data));
+            $fieldValues = ':' . implode(', :', array_keys($data));
 
-        $fieldNames = implode(', ', array_keys($data));
-        $fieldValues = ':' . implode(', :', array_keys($data));
+            $sql = "INSERT INTO $table ($fieldNames) VALUES ($fieldValues)";
+            //echo $sql;
+            //die();
+            $stmt = $this->prepare($sql);
 
-        $sql = "INSERT INTO $table ($fieldNames) VALUES ($fieldValues)";
-        //echo $sql;
-        //die();
-        $stmt = $this->prepare($sql);
-
-        foreach ($data as $key => $value) {
-            $stmt->bindValue(":$key", $value);
+            foreach ($data as $key => $value) {
+                $stmt->bindValue(":$key", $value);
+            }
+            $stmt->execute();
+            return true;
         }
-        $stmt->execute();
+        catch (Exception $ex) {
+//            echo '<hr/>';
+//            echo 'Code=' . $ex->getCode() . '<br/>';
+//            echo 'File=' . $ex->getFile() . '<br/>';
+//            echo 'Line=' . $ex->getLine() . '<br/>';
+//            echo 'Message=' . $ex->getMessage() . '<br/>';
+//            echo '<hr/>';
+//            die();
+            //return $ex->getMessage();
+            return false;
+        }
     }
 
     /**
