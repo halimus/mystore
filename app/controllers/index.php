@@ -5,19 +5,16 @@ class Index extends Controller {
     function __construct() {
         parent::__construct();
         
-        //die('pass1');
-        
         if(!isset($_SESSION['logged_in'])){
             header("location: " . APP_URL . "login");
         }
     }
 
     /*
-     * 
+     * Default Home page
      */
     public function index() {
         $this->view->title = 'MyStore | Home';
-        
         
         /*
          * 
