@@ -11,14 +11,14 @@ class User extends Controller {
     }
 
     /*
-     * 
+     * To be developed :)
      */
     public function index() {
         die('user profile');
     }
     
     /*
-     * 
+     * To be developed :)
      */
     public function change_password() {
         $this->view->title = 'MyStore | User';
