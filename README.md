@@ -11,7 +11,7 @@ Email address: admin@mystore.com
 Password: 1234
 
 
-## Install:
+## Installation:
 
 ### Step 1 : The Datbase
 
