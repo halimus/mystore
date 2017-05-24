@@ -24,6 +24,7 @@ You will find the MPD as well in this folder.
 ![alt tag](https://github.com/halimus/mystore/blob/master/_scripts/storedb.png)
 
 
+
 ### Step 2 : The Change The database credentials for the app:
 
 go to the forlder: app/config/database.php 
