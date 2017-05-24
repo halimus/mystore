@@ -4,7 +4,7 @@ PHP MVC Basic admin for an Ecommerce with Bootstrap & jQuery
 ## Demo : 
 https://demo.halimlardjane.com/mystore
 
-The email: admin@mystore.com
+Email address: admin@mystore.com
 
 Password: 1234
 
@@ -38,7 +38,7 @@ If, yesGo go : app/config/config.php
 
 http://localhost/mystore/
 
-The email: admin@mystore.com
+Email address: admin@mystore.com
 
 Password: 1234
 
