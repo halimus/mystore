@@ -17,7 +17,7 @@
                         <tr id="tr_' . $sub_category_id . '">
                             <td>' . $sub_category_id . '</td>
                             <td>' . $value['sub_category_name'] . '</td>
-                            <td>' . $value['category_id'] . '</td>
+                            <td>' . $value['category_name'] . '</td>
                             <td><a href="' . APP_URL . 'subcategory/edit/' . $sub_category_id . '" title="Edit" class="btn btn-sm btn-success edit"><i class="fa fa-pencil"></i></a></td>
                             <td><a href="#" rel="' . $sub_category_id . '" title="Delete" class="btn btn-sm btn-danger delete_subcategory"><i class="fa fa-times"></i></a></td>
                         </tr>';

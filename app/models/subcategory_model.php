@@ -13,7 +13,7 @@ class Subcategory_model extends Model {
      * 
      */
     public function get_all_subcategory() {
-        $sql = "SELECT * FROM ".$this->table;
+        $sql = "SELECT * FROM view_subcategory";
         return $this->db->select($sql);
     }
     
