@@ -121,6 +121,29 @@ CREATE TABLE IF NOT EXISTS `images` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `view_subcategory`
+-- -----------------------------------------------------
+
+CREATE
+    /*[ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}]
+    [DEFINER = { user | CURRENT_USER }]
+    [SQL SECURITY { DEFINER | INVOKER }]*/
+    VIEW `view_subcategory` 
+    AS
+(
+SELECT
+    `sub_category`.`sub_category_id`
+    , `sub_category`.`sub_category_name`
+    , `sub_category`.`category_id`
+    , `category`.`category_name`
+FROM
+    `sub_category`
+    INNER JOIN `category` 
+        ON (`sub_category`.`category_id` = `category`.`category_id`)
+);
+
+
 
 -- -----------------------------------------------------
 -- Table `view_product`
