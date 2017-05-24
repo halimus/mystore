@@ -1,15 +1,16 @@
 # mystore 1.0
 PHP MVC Basic admin for an Ecommerce with Bootstrap & jQuery
 
-### Demo : 
+## Demo : 
 https://demo.halimlardjane.com/mystore
 
 The email: admin@mystore.com
+
 Password: 1234
 
-##Install:
+## Install:
 
-###Step 1 : The Datbase
+### Step 1 : The Datbase
 
 Go to the _script forlder and execute the 2 scripts on MySQL:
 1- 01-script-structure.sql
@@ -21,7 +22,7 @@ You will find the MPD as well in this folder.
 ![alt tag](https://github.com/halimus/mystore/blob/master/_scripts/storedb.png)
 
 
-###Step 2 : The Change The database credentials for the app:
+### Step 2 : The Change The database credentials for the app:
 
 go to the forlder: app/config/database.php 
 
@@ -30,7 +31,7 @@ if, yes
 Go go : app/config/config.php
 
 
-###Step 4 : Start your app on your browser
+### Step 4 : Start your app on your browser
 
 http://localhost/mystore/
 
