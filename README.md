@@ -25,9 +25,9 @@ You will find the MPD as well in this folder.
 
 
 
-### Step 2 : The Change The database credentials for the app:
+### Step 2 : If you need to change the database credentials for the app:
 
-go to the forlder: app/config/database.php 
+Go to the forlder: app/config/database.php 
 
 ### Step 3 : probably you need to change the APP_URL
 
