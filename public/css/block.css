@@ -1,0 +1,385 @@
+/*
+ *  Document   : main.css
+ *  Author     : pixelcave
+ *  Description: The main stylesheet of the templatetab-panetab-pane
+ *
+ *  Structure (with shortcodes):
+ *      (#m01lls) LOGIN (Login page layout structure and elements)
+ *      (#m02mls) MAIN LAYOUT (Main page layout structure)
+ *      (#m03hds) HEADER (Header + extend of Bootstrap styles)
+ *      (#m04nvs) NAVIGATION (Primary + Dashboard Menu)
+ *      (#m05mcs) MAIN CONTENT (Template specific styles such as Block, Tiles and Pricing Tables)
+ *      (#m06bos) BOOTSTRAP OVERWRITE + EXTEND STYLES (Overwrite and extend the default bootstrap styles + Datatables plugin)
+ *      (#m07hes) HELPERS (Some helper classes)
+ *      (#m08res) RESPONSIVE
+ *      (#m09rts) RETINA
+ */
+
+/*
+=================================================================
+(#m05mcs) MAIN CONTENT
+=================================================================
+*/
+
+/* Blocks */
+.block {
+    margin: 0 0 20px;
+    padding: 0;
+    background-color: #fff;
+}
+
+.block .block {
+    margin: 0 0 15px;
+}
+
+.block-title {
+    margin: 0;
+    background-color: #eee;
+}
+
+.block-title code {
+    margin-bottom: 0;
+    background: #ffffff;
+    border: none;
+    padding: 2px 3px;
+    opacity: 0.60;
+    filter: alpha(opacity=60);
+}
+
+.block-title h1,
+.block-title h2,
+.block-title h3,
+.block-title h4,
+.block-title h5,
+.block-title h6 {
+    display: inline-block;
+    padding: 12px 10px 10px;
+    margin: 0;
+    line-height: normal;
+}
+
+.block-title h1,
+.block-title h2,
+.block-title h3 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.block-options {
+    float: right;
+    margin: 8px 10px 0 0;
+}
+
+.block-options-left {
+    float: left;
+    margin: 8px 0 0 10px;
+}
+
+.block-tabs .block-options,
+.block-tabs .block-options-left {
+    margin-top: 6px;
+}
+
+.block-content {
+    margin: 0;
+    padding: 20px 20px 5px;
+    border: 2px solid #eee;
+    border-top: none;
+}
+
+.block-content.full {
+    padding: 20px;
+}
+
+.block-content.block-content-flat {
+    padding: 0;
+}
+
+.block-section {
+    margin-bottom: 20px;
+}
+
+.block-section-pad {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.block-last {
+    margin-bottom: 0 !important;
+}
+
+/* Block Themed */
+.block.block-themed {
+    border: none;
+}
+
+.block.block-themed > .block-title {
+    background: #2980b9;
+}
+
+.block.block-themed > .block-content {
+    border-color: #2980b9;
+}
+
+.block.block-themed > .block-title h1,
+.block.block-themed > .block-title h2,
+.block.block-themed > .block-title h3,
+.block.block-themed > .block-title h4,
+.block.block-themed > .block-title h5,
+.block.block-themed > .block-title h6 {
+    color: #fff;
+}
+
+.block.block-themed > .block-title h1 small,
+.block.block-themed > .block-title h2 small,
+.block.block-themed > .block-title h3 small,
+.block.block-themed > .block-title h4 small,
+.block.block-themed > .block-title h5 small,
+.block.block-themed > .block-title h6 small {
+    color: #f5f5f5;
+}
+
+/* Block Tabs */
+.block.block-tabs {
+    padding: 0;
+    border: 2px solid #ddd;
+}
+
+.block-tabs > .nav-tabs {
+    background-color: #ddd;
+    border-bottom: 2px solid #ddd;
+}
+
+.block-tabs > .nav-tabs > li {
+    margin-bottom: -2px;
+}
+
+.block-tabs > .nav-tabs > li > a,
+.block-tabs > .nav-tabs > li > a:hover,
+.block-tabs > .nav-tabs > li > a:focus {
+    border: none;
+}
+
+.block-tabs > .nav-tabs > li > a:hover,
+.block-tabs > .nav-tabs > li > a:focus {
+    border: none;
+    color: #333;
+    background-color: #d4d4d4;
+}
+
+.block-tabs > .nav-tabs > .active > a:hover,
+.block-tabs > .nav-tabs > .active > a:focus {
+    background-color: #fff;
+}
+
+.block-tabs > .tab-content {
+    border: 0;
+    padding: 20px;
+    margin: 0;
+}
+
+.block-tabs.block-themed {
+    border: 2px solid #2980b9;
+}
+
+.block-tabs.block-themed > .nav-tabs {
+    background: #2980b9;
+    border-bottom: none;
+}
+
+.block-tabs.block-themed > .nav-tabs > li {
+    margin-bottom: 0;
+}
+
+.block-tabs.block-themed > .nav-tabs > li > a {
+    color: #fff;
+}
+
+.block-tabs.block-themed > .nav-tabs > li > a:hover,
+.block-tabs.block-themed > .nav-tabs > li > a:focus {
+    background: #333;
+}
+
+.block-tabs.block-themed > .nav-tabs > .active > a,
+.block-tabs.block-themed > .nav-tabs > .active > a:hover,
+.block-tabs.block-themed > .nav-tabs > .active > a:focus {
+    color: #333;
+    background-color: #fff;
+}
+
+.block-tabs.block-themed > .tab-content {
+    padding: 20px;
+}
+
+.modal-body .block-tabs.block-themed {
+    border: 0;
+}
+
+
+
+
+
+
+
+
+
+/* Tiles */
+.block.block-tiles {
+    padding: 0;
+    margin: 0 -7px 14px 0;
+}
+
+.tile {
+    text-align: center;
+    padding: 10px;
+    margin: 0 6px 6px 0;
+    float: left;
+    background-color: #eee;
+    display: block;
+    position: relative;
+}
+
+.tile:hover {
+    opacity: .75;
+    filter: alpha(opacity=75);
+}
+
+a.tile {
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+
+a.tile:hover {
+    text-decoration: none;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}
+
+.block-tiles-animated a.tile:hover {
+    transform: scale(0.95) rotateZ(1deg);
+    -ms-transform: scale(0.95) rotateZ(1deg);
+    -webkit-transform: scale(0.95) rotateZ(1deg);
+}
+
+.tile-themed {
+    background-color: #2980b9;
+    background-repeat: repeat;
+    color: #fff;
+}
+
+.tile > i {
+    padding: 20px 0 0;
+    display: inline-block;
+    font-size: 56px;
+    color: #aaa;
+    -webkit-transform:translate3d(0,0,0);
+}
+
+.tile > i.gi,
+.tile > i.hi {
+    padding: 7px 0 0;
+}
+
+.tile > i.si,
+.tile > i.fi {
+    padding: 16px 0 0;
+}
+
+.tile-height-2x > i {
+    padding: 107px 0 0;
+}
+
+.tile-height-2x > i.gi,
+.tile-height-2x > i.hi {
+    padding: 90px 0 0;
+}
+
+.tile-height-2x > i.si,
+.tile-height-2x > i.fi {
+    padding: 103px 0 0;
+}
+
+.tile-themed > i {
+    color: #fff;
+}
+
+.tile-info {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 10px;
+    color: #aaa;
+}
+
+.tile-themed .tile-info {
+    color: #fff;
+}
+
+.tile {
+    width: 143px;
+    height: 143px;
+}
+
+.tile > i {
+    width: 123px;
+}
+
+.tile-info {
+    width: 143px;
+}
+
+.tile-width-2x,
+.tile-width-2x .tile-info {
+    width: 292px;
+}
+
+.tile-height-2x {
+    height: 292px;
+}
+
+.tile-width-2x > i {
+    width: 272px;
+}
+
+/* Gallery */
+.gallery a img, .gallery-image img, a[data-toggle="lightbox-image"] img {
+    max-width: 100%;
+    border: 3px solid #fff;
+}
+
+.gallery a:hover img, .gallery-image:hover img, a[data-toggle="lightbox-image"]:hover img {
+    border: 3px solid #2980b9;
+}
+
+.gallery-image {
+    position: relative;
+}
+
+.gallery-image-options {
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    display: none;
+    width: 100%;
+}
+
+.gallery-image:hover .gallery-image-options {
+    display: block;
+}
+
+/* Float content in text */
+.content-text .pull-left {
+    margin: 0 20px 10px 0;
+}
+
+.content-text .pull-right {
+    margin: 0 0 10px 20px;
+}
+
+
+
