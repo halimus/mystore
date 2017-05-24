@@ -93,7 +93,7 @@ class Category extends Controller {
          */
         $category = $this->model->get_single_category($id);
         if(empty($category)){
-            header("location: " . APP_URL . "error");
+            header("location: " . APP_URL . "errors");
         }
         $this->view->category = $category;
         

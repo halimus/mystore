@@ -88,7 +88,6 @@ class Product extends Controller {
             }
             else{
                 $result = $this->model->update_product($id);
-                //$this->view->notif = $result;
                 if($result){
                     $notif['msg'] = 'SubCategory successfully updated';
                     $notif['type'] = 'success';
@@ -105,7 +104,6 @@ class Product extends Controller {
          * Get the Data
          */
         $product = $this->model->get_single_product($id);
-        //Utils::print_r($product); exit;
         if(empty($product)){
             header("location: " . APP_URL . "errors");
         }
